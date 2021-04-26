@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:AppVotacao}/local.db",
+            "name": "local.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
