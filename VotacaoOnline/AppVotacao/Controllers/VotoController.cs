@@ -15,10 +15,13 @@ namespace AppVotacao.Controller
     public class VotoController : ControllerBase
     {
         private readonly VotoDbContext _context;
+        private string _dataAtual { get; set; }
+       
 
         public VotoController(VotoDbContext context)
         {
             _context = context;
+            _dataAtual = DateTime.Now.ToString("dd-MM-yyyy");
         }
 
         // GET: api/Voto
@@ -79,7 +82,7 @@ namespace AppVotacao.Controller
         [HttpPost]
         public async Task<ActionResult<Voto>> PostVoto(Voto voto)
         {
-            voto.Data = DateTime.Now.ToString("dd-MM-yyyy");
+            voto.Data = _dataAtual;
 
             if (VencedoresDaSemana(voto.RestauranteId))
             {
@@ -133,9 +136,7 @@ namespace AppVotacao.Controller
 
         private bool UsuariojaVotou(int UsuarioId)
         {
-            var dt = DateTime.Now.ToString("yyyy-MM-dd");
-            
-            return _context.Votos.Where(e => e.Data == dt).Any(e => e.UsuarioId == UsuarioId);                         
+            return _context.Votos.Where(e => e.Data == _dataAtual).Any(e => e.UsuarioId == UsuarioId);                         
         }
     }
 }
