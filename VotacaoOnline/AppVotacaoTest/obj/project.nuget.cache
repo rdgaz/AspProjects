@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dEeOYL6/XLWeFVHd7gvuyHiFrmghfZpWGpHQKJkdltPOhVC8/7/aiRPZ+4OjM9Dh4glBQbFA6D6V4KffWVp+tA==",
+  "dgSpecHash": "NIwEriQxm0TchhkeC+GhgV7sFiY9lDqtEJ7ueEaIimzUUjjn5PH4yhylR1qPX+L8uL31qNa9NL5PXR3Xsk5dNw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\r.souza\\source\\repos\\AppVotacaoTest\\AppVotacaoTest.csproj",
+  "projectFilePath": "C:\\Users\\r.souza\\Documents\\GitHub\\AspProjects\\VotacaoOnline\\AppVotacaoTest\\AppVotacaoTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\r.souza\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\r.souza\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",

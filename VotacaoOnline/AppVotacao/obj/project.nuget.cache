@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QWoUutrqUZhMkNlrhekrIe37giEDLzgA9EvyOq0Cb2Z7PHt45k79gvnwz8yQh2m639UwCeCGTY3vEN89wNYvaw==",
+  "dgSpecHash": "pnH2GOrCnMYBD20DZYLhtgExlDfpeu7DeKk12EmRwf456Pdhp/4sGJSToPuiTrDRBZijhlf9nffia/dSbCYuNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\r.souza\\source\\repos\\AppVotacao\\AppVotacao.csproj",
+  "projectFilePath": "C:\\Users\\r.souza\\Documents\\GitHub\\AspProjects\\VotacaoOnline\\AppVotacao\\AppVotacao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\r.souza\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

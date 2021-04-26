@@ -5579,11 +5579,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\r.souza\\source\\repos\\AppVotacaoTest\\AppVotacaoTest.csproj",
+      "projectUniqueName": "C:\\Users\\r.souza\\Documents\\GitHub\\AspProjects\\VotacaoOnline\\AppVotacaoTest\\AppVotacaoTest.csproj",
       "projectName": "AppVotacaoTest",
-      "projectPath": "C:\\Users\\r.souza\\source\\repos\\AppVotacaoTest\\AppVotacaoTest.csproj",
+      "projectPath": "C:\\Users\\r.souza\\Documents\\GitHub\\AspProjects\\VotacaoOnline\\AppVotacaoTest\\AppVotacaoTest.csproj",
       "packagesPath": "C:\\Users\\r.souza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\r.souza\\source\\repos\\AppVotacaoTest\\obj\\",
+      "outputPath": "C:\\Users\\r.souza\\Documents\\GitHub\\AspProjects\\VotacaoOnline\\AppVotacaoTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

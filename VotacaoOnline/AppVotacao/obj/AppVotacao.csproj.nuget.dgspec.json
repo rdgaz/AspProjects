@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\r.souza\\source\\repos\\AppVotacao\\AppVotacao.csproj": {}
+    "C:\\Users\\r.souza\\Documents\\GitHub\\AspProjects\\VotacaoOnline\\AppVotacao\\AppVotacao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\r.souza\\source\\repos\\AppVotacao\\AppVotacao.csproj": {
+    "C:\\Users\\r.souza\\Documents\\GitHub\\AspProjects\\VotacaoOnline\\AppVotacao\\AppVotacao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\r.souza\\source\\repos\\AppVotacao\\AppVotacao.csproj",
+        "projectUniqueName": "C:\\Users\\r.souza\\Documents\\GitHub\\AspProjects\\VotacaoOnline\\AppVotacao\\AppVotacao.csproj",
         "projectName": "AppVotacao",
-        "projectPath": "C:\\Users\\r.souza\\source\\repos\\AppVotacao\\AppVotacao.csproj",
+        "projectPath": "C:\\Users\\r.souza\\Documents\\GitHub\\AspProjects\\VotacaoOnline\\AppVotacao\\AppVotacao.csproj",
         "packagesPath": "C:\\Users\\r.souza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\r.souza\\source\\repos\\AppVotacao\\obj\\",
+        "outputPath": "C:\\Users\\r.souza\\Documents\\GitHub\\AspProjects\\VotacaoOnline\\AppVotacao\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
