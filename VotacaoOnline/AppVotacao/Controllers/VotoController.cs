@@ -16,20 +16,19 @@ namespace AppVotacao.Controller
     {
         private readonly VotoDbContext _context;
         private string _dataAtual { get; set; }
-       
+
 
         public VotoController(VotoDbContext context)
         {
             _context = context;
-            _dataAtual = DateTime.Now.ToString("dd-MM-yyyy");
+            _dataAtual = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         // GET: api/Voto
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Voto>>> GetVotos()
-        {
-            var list = await _context.Votos.ToListAsync();
-            return list;
+        {            
+            return await _context.Votos.ToListAsync();
         }
 
         // GET: api/Voto/5
@@ -84,18 +83,17 @@ namespace AppVotacao.Controller
         {
             voto.Data = _dataAtual;
 
-            if (VencedoresDaSemana(voto.RestauranteId))
-            {
-                var x = "";
-            }
-
             if (UsuariojaVotou(voto.UsuarioId))
             {
                 Response.StatusCode = 400;
                 return Content("Usuário já votou hoje!");
             }
-                
 
+            if (JavenceuNaSemana(voto.RestauranteId))
+            {
+                Response.StatusCode = 400;
+                return Content("Este restaurante já venceu nesta semana!");
+            }
 
             _context.Votos.Add(voto);
             await _context.SaveChangesAsync();
@@ -119,24 +117,29 @@ namespace AppVotacao.Controller
             return NoContent();
         }
 
-        private bool VotoExists(int id)
+        private bool VotoExists(int id) => _context.Votos.Any(e => e.Id == id);
+
+        private bool UsuariojaVotou(int UsuarioId) => _context.Votos.Where(e => e.Data == _dataAtual).Any(e => e.UsuarioId == UsuarioId);
+
+        private bool JavenceuNaSemana(int RestauranteId)
         {
-            return _context.Votos.Any(e => e.Id == id);
+            return VencedoresDaSemana().Any(e => e.RestauranteId == RestauranteId);
         }
 
-        private bool VencedoresDaSemana(int RestauranteId)
+        private List<Voto> VencedoresDaSemana()
         {
-            var dt = SemanaHelper.PrimeiroDiaDaSemana(DateTime.Now);
-            var list = _context.Votos.Where(v => Convert.ToDateTime(v.Data) >= dt).ToListAsync();
 
+            int dc = DateTime.Now >= DateTime.Parse("11:30:00") ? 0 : -1;
 
+            var dia1 = SemanaHelper.PrimeiroDiaDaSemana(DateTime.Now).ToString("dd/MM/yyyy");
 
-            return _context.Votos.Any(e => e.Id == RestauranteId);
-        }
+            var querySQL = @$"
+                            select *,max(qtd) from (
+	                            select *,count(*) as qtd FROM votos 
+	                            where data BETWEEN '{dia1}' and '{DateTime.Now.AddDays(dc).ToString("dd/MM/yyyy")}' group by Data,RestauranteId)
+                             group by data";
 
-        private bool UsuariojaVotou(int UsuarioId)
-        {
-            return _context.Votos.Where(e => e.Data == _dataAtual).Any(e => e.UsuarioId == UsuarioId);                         
-        }
+            return _context.Votos.FromSqlRaw(querySQL).ToList<Voto>();            
+        } 
     }
 }
